@@ -1,0 +1,5 @@
+C:\Users\usuga\source\repos\consolaBD\Consola\bin\Release\net8.0\publish\win-x64\Consola.pdb
+C:\Users\usuga\source\repos\consolaBD\Consola\bin\Release\net8.0\publish\win-x64\.Env
+C:\Users\usuga\source\repos\consolaBD\Consola\bin\Release\net8.0\publish\win-x64\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\usuga\source\repos\consolaBD\Consola\bin\Release\net8.0\publish\win-x64\Data.pdb
+C:\Users\usuga\source\repos\consolaBD\Consola\bin\Release\net8.0\publish\win-x64\Consola.exe
