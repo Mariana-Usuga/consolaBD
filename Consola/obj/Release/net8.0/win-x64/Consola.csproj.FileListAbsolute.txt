@@ -231,3 +231,4 @@ C:\Users\usuga\source\repos\consolaBD\Consola\obj\Release\net8.0\win-x64\refint\
 C:\Users\usuga\source\repos\consolaBD\Consola\obj\Release\net8.0\win-x64\Consola.pdb
 C:\Users\usuga\source\repos\consolaBD\Consola\obj\Release\net8.0\win-x64\Consola.genruntimeconfig.cache
 C:\Users\usuga\source\repos\consolaBD\Consola\obj\Release\net8.0\win-x64\ref\Consola.dll
+C:\Users\usuga\source\repos\consolaBD\Consola\bin\Release\net8.0\win-x64\des.txt

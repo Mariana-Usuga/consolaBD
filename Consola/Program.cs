@@ -43,7 +43,8 @@ var listaArchivos = new List<string>
     Path.Combine(conf["﻿RutaArchivo"], nombreArchivo)
 };
 
-var email = Correo.CrearMensaje(destinatarios.ToList(), $"prueba correo {DateTime.Now.ToString("yyyyMMdddhh:mm:ss")}", "Hola esto es una prueba", false, "usugamontoya1@outlook.es", "Mariana usuga");
+var email = Correo.CrearMensaje([.. destinatarios], $"prueba correo {DateTime.Now.ToString("yyyyMMdddhh:mm:ss")}",
+    "Hola esto es una prueba", false, "usugamontoya1@outlook.es", "Mariana usuga");
 email.AdjuntarArchivos(listaArchivos);
 email.EnviarMensaje(conf["UsuarioEmail"], conf["ClaveEmail"],conf["HostEmail"], int.Parse(conf["PuertoEmail"]), bool.Parse(conf["UsaSSL"]));
 //File.Delete(Path.Combine(conf["﻿RutaArchivo"], nombreArchivo));

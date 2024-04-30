@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Mail;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace Data
@@ -14,18 +15,25 @@ namespace Data
 
             )
         {
-            MailMessage mesaje = new MailMessage();
+            MailMessage mensaje = new MailMessage();
             foreach(string destinario in destinatarios)
             {
-                mesaje.CC.Add(destinario);
+                if (EmailValido(destinario))
+                {
+                    mensaje.CC.Add(destinario);
+                }else
+                {
+                    Console.WriteLine($"El correo {destinario} no es un email valido");
+                }
+                //mesaje.CC.Add(destinario);
             }
-            mesaje.From = new MailAddress(usuario, usuarioAMostrar, Encoding.UTF8);
-            mesaje.Subject = asunto;
-            mesaje.Body = cuerpo;
-            mesaje.BodyEncoding = Encoding.UTF8;
-            mesaje.Priority = MailPriority.Normal;
-            mesaje.IsBodyHtml = esHtml;
-            return mesaje;
+            mensaje.From = new MailAddress(usuario, usuarioAMostrar, Encoding.UTF8);
+            mensaje.Subject = asunto;
+            mensaje.Body = cuerpo;
+            mensaje.BodyEncoding = Encoding.UTF8;
+            mensaje.Priority = MailPriority.Normal;
+            mensaje.IsBodyHtml = esHtml;
+            return mensaje;
 
         }
 
@@ -67,6 +75,15 @@ namespace Data
                 Console.WriteLine($"Error al enviar email, {ex.Message}");
             }
         }
+
+        private static bool EmailValido(string email)
+        {
+            Regex regex = new Regex(@"^([\w\.-]+)@([\w\.-]+((\.(\w){2,3})+)$");
+            Match match = regex.Match(email);
+            return match.Success;
+        }
+
+
 
     }
 }
